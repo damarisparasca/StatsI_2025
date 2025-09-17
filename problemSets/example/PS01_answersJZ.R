@@ -3,7 +3,7 @@
 # set wd
 # clear global .envir
 #####################
-
+x <- 3
 # remove objects
 rm(list=ls())
 # detach all libraries
