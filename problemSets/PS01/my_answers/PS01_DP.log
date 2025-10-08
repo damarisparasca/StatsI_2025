@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.7)  8 OCT 2025 12:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.7)  8 OCT 2025 13:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -727,9 +727,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
 [1
 
-{/Users/damirish/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./PS01_DP.R)
+{/Users/damirish/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-[2] (./PS01_DP.aux)
+[2] (./PS01_DP.R)
+
+[3]
+
+[4] (./PS01_DP.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
@@ -738,18 +742,18 @@ Package rerunfilecheck Info: File `PS01_DP.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27385 strings out of 469781
- 479214 string characters out of 5481231
+ 27387 strings out of 469781
+ 479226 string characters out of 5481231
  1111222 words of memory out of 5000000
  55284 multiletter control sequences out of 15000+600000
  637611 words of font info for 85 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,6n,91p,3239b,2131s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/damirish/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </Users/damirish/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PS01_DP.pdf (2 pages, 112064 bytes).
+Output written on PS01_DP.pdf (4 pages, 112721 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
+ 98 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
