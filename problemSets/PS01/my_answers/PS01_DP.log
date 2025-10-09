@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.7)  9 OCT 2025 01:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.7)  9 OCT 2025 20:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -727,9 +727,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
 [1
 
-{/Users/damirish/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./PS01_DP.R) (./PS01_DP.R) (./PS01_DP.R) (./PS01_DP.R) (./PS01_DP.R)
+{/Users/damirish/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./PS01_DP.R) (./PS01_DP.R) (./PS01_DP.R) (./PS01_DP.R)
 
-[2]
+[2] (./PS01_DP.R)
 
 ! LaTeX Error: There's no line here to end.
 
@@ -737,29 +737,24 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.136 \begin
-            {itemize}
+l.143 \vspace
+             {.5cm}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
-
- []
-
-(./PS01_DP.R)
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
@@ -767,86 +762,102 @@ Underfull \hbox (badness 10000) in paragraph at lines 153--154
 
 [3] (./PS01_DP.R)
 
-[4]
-<scatter_x1_y.png, id=67, 481.8pt x 481.8pt>
+[4] (./PS01_DP.R)
+
+[5] (./PS01_DP.R)
+<scatter_x1_y.png, id=70, 481.8pt x 481.8pt>
 File: scatter_x1_y.png Graphic file (type png)
 <use scatter_x1_y.png>
-Package pdftex.def Info: scatter_x1_y.png  used on input line 199.
-(pdftex.def)             Requested size: 430.31812pt x 430.32979pt.
+Package pdftex.def Info: scatter_x1_y.png  used on input line 212.
+(pdftex.def)             Requested size: 317.07614pt x 317.08472pt.
 
 
-[5 <./scatter_x1_y.png>]
-<scatter_x2_y.png, id=75, 481.8pt x 481.8pt>
+[6 <./scatter_x1_y.png>] (./PS01_DP.R)
+<scatter_x2_y.png, id=87, 481.8pt x 481.8pt>
 File: scatter_x2_y.png Graphic file (type png)
 <use scatter_x2_y.png>
-Package pdftex.def Info: scatter_x2_y.png  used on input line 206.
-(pdftex.def)             Requested size: 430.31812pt x 430.32979pt.
+Package pdftex.def Info: scatter_x2_y.png  used on input line 222.
+(pdftex.def)             Requested size: 317.07614pt x 317.08472pt.
 
 
-[6 <./scatter_x2_y.png>]
-<scatter_x3_y.png, id=82, 481.8pt x 481.8pt>
+[7 <./scatter_x2_y.png>] (./PS01_DP.R)
+<scatter_x3_y.png, id=104, 481.8pt x 481.8pt>
 File: scatter_x3_y.png Graphic file (type png)
 <use scatter_x3_y.png>
-Package pdftex.def Info: scatter_x3_y.png  used on input line 213.
-(pdftex.def)             Requested size: 430.31812pt x 430.32979pt.
+Package pdftex.def Info: scatter_x3_y.png  used on input line 232.
+(pdftex.def)             Requested size: 317.07614pt x 317.08472pt.
 
 
-[7 <./scatter_x3_y.png>]
-<scatter_x1_x2.png, id=90, 481.8pt x 481.8pt>
+[8 <./scatter_x3_y.png>] (./PS01_DP.R)
+<scatter_x1_x2.png, id=120, 481.8pt x 481.8pt>
 File: scatter_x1_x2.png Graphic file (type png)
 <use scatter_x1_x2.png>
-Package pdftex.def Info: scatter_x1_x2.png  used on input line 220.
-(pdftex.def)             Requested size: 430.31812pt x 430.32979pt.
+Package pdftex.def Info: scatter_x1_x2.png  used on input line 242.
+(pdftex.def)             Requested size: 317.07614pt x 317.08472pt.
 
 
-[8 <./scatter_x1_x2.png>]
-<scatter_x2_x3.png, id=97, 481.8pt x 481.8pt>
+[9 <./scatter_x1_x2.png>] (./PS01_DP.R)
+<scatter_x1_x3.png, id=137, 481.8pt x 481.8pt>
+File: scatter_x1_x3.png Graphic file (type png)
+<use scatter_x1_x3.png>
+Package pdftex.def Info: scatter_x1_x3.png  used on input line 252.
+(pdftex.def)             Requested size: 317.07614pt x 317.08472pt.
+
+
+[10 <./scatter_x1_x3.png>] (./PS01_DP.R)
+<scatter_x2_x3.png, id=153, 481.8pt x 481.8pt>
 File: scatter_x2_x3.png Graphic file (type png)
 <use scatter_x2_x3.png>
-Package pdftex.def Info: scatter_x2_x3.png  used on input line 227.
-(pdftex.def)             Requested size: 430.31812pt x 430.32979pt.
+Package pdftex.def Info: scatter_x2_x3.png  used on input line 262.
+(pdftex.def)             Requested size: 317.07614pt x 317.08472pt.
 
 
-[9 <./scatter_x2_x3.png>]
-File: scatter_x2_x3.png Graphic file (type png)
-<use scatter_x2_x3.png>
-Package pdftex.def Info: scatter_x2_x3.png  used on input line 234.
-(pdftex.def)             Requested size: 430.31812pt x 430.32979pt.
-
-
-[10]
-<boxplot_reg_y.png, id=109, 481.8pt x 481.8pt>
+[11 <./scatter_x2_x3.png>] (./PS01_DP.R)
+<boxplot_reg_y.png, id=169, 481.8pt x 481.8pt>
 File: boxplot_reg_y.png Graphic file (type png)
 <use boxplot_reg_y.png>
-Package pdftex.def Info: boxplot_reg_y.png  used on input line 241.
-(pdftex.def)             Requested size: 430.31812pt x 430.32979pt.
+Package pdftex.def Info: boxplot_reg_y.png  used on input line 273.
+(pdftex.def)             Requested size: 317.07614pt x 317.08472pt.
 
 
-[11 <./boxplot_reg_y.png>] (./PS01_DP.aux)
+[12 <./boxplot_reg_y.png>] (./PS01_DP.R
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 189.
+ (/Users/damirish/Library/TinyTeX/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 189.
+)
+<scatter_x1_y_reg.png, id=186, 481.8pt x 481.8pt>
+File: scatter_x1_y_reg.png Graphic file (type png)
+<use scatter_x1_y_reg.png>
+Package pdftex.def Info: scatter_x1_y_reg.png  used on input line 284.
+(pdftex.def)             Requested size: 317.07614pt x 317.08472pt.
+
+
+[13 <./scatter_x1_y_reg.png>]
+
+[14] (./PS01_DP.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `PS01_DP.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27505 strings out of 469781
- 481160 string characters out of 5481231
- 1144406 words of memory out of 5000000
- 55354 multiletter control sequences out of 15000+600000
+ 27661 strings out of 469781
+ 483466 string characters out of 5481231
+ 1217607 words of memory out of 5000000
+ 55411 multiletter control sequences out of 15000+600000
  638225 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,6n,91p,3239b,2131s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </Users/damirish/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </Users/damirish/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PS01_DP.pdf (11 pages, 251544 bytes).
+ </Users/damirish/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </Users/damirish/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on PS01_DP.pdf (14 pages, 326082 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 130 compressed objects within 2 object streams
- 51 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 293 PDF objects out of 1000 (max. 8388607)
+ 235 compressed objects within 3 object streams
+ 131 named destinations out of 1000 (max. 500000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
