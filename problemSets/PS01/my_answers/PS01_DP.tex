@@ -94,6 +94,71 @@ A school counselor was curious about the average of IQ of the students in her sc
 
 \newpage
 	\section*{Solution - Question 1: Education}
+\vspace{.5cm}
+\subsection*{1. Confidence Interval}
+\begin{itemize}
+	\item 
+	Calculate the mean 
+	\lstinputlisting[language=R, firstline=39, lastline=40]{PS01_DP.R} 
+  \begin{verbatim}
+  	[1] 98.44
+  \end{verbatim}
+  \item 
+  Calculate the sum of the squared errors to get the variance, and then the standard deviation
+  	\lstinputlisting[language=R, firstline=43, lastline=47]{PS01_DP.R} 
+  \begin{verbatim}
+  	[1] 13.09287
+  \end{verbatim}
+  \item 
+  Calculate the standard error 
+  \lstinputlisting[language=R, firstline=50, lastline=51]{PS01_DP.R} 
+  \begin{verbatim}
+  	[1] 2.618575
+  \end{verbatim}
+   \item 
+  Find the t-score for the desired confidence level, with 24 degrees of freedom
+  \lstinputlisting[language=R, firstline=54, lastline=55]{PS01_DP.R} 
+  \begin{verbatim}
+  	[1] 1.710882
+  \end{verbatim}
+   \item 
+  Construct the confidence interval by calculating its lower and upper limits
+  \lstinputlisting[language=R, firstline=58, lastline=61]{PS01_DP.R} 
+  \begin{verbatim}
+  	> lowerlimit
+  	[1] 93.95993
+  	> upperlimit
+  	[1] 102.9201
+  \end{verbatim}
+  \end{itemize}
+\newpage 
+\subsection*{2. Hypothesis Testing}\\
+\begin{itemize}
+	\item \textbf{Step 1:} assumptions\\
+	\begin{itemize}
+		\item the data is quantitative
+		\item the sampling method is random
+		\item the sample size is smaller than 30, so we cannot assume it follows a normal distribution - therefore, I used the t-score and not the Z-score as the test statistic 
+	\end{itemize}
+	\item \textbf{Step 2:} hypotheses\\
+	\begin{itemize}
+		\item \textbf{Null hypothesis:} the mean is lower or equal to 100 
+		\item \textbf{Alternative hypothesis:} the mean is higher than 100 
+	\end{itemize}
+	\item \textbf{Step 3: } calculate the test statistic\\
+		\lstinputlisting[language=R, firstline=70, lastline=71]{PS01_DP.R} 
+		\begin{verbatim}
+			[1] -0.5957439
+		\end{verbatim}
+	\item \textbf{Step 4:} calculate the p-value \\
+	\lstinputlisting[language=R, firstline=74, lastline=75]{PS01_DP.R} 
+	\begin{verbatim}
+		[1] 0.7215383
+	\end{verbatim}
+	\item \textbf{Step 5:} draw a conclusion \\
+	The p-value is higher than alpha, so we cannot reject the null hypothesis that the mean is lower or equal to 100 
+\end{itemize}
+
 \newpage
 	\section*{Question 2: Political Economy}
 
@@ -113,7 +178,7 @@ A school counselor was curious about the average of IQ of the students in her sc
 \vspace{.5cm}
 \noindent Explore the \texttt{expenditure} data set and import data into \texttt{R}.
 \vspace{.5cm}
-\lstinputlisting[language=R, firstline=54, lastline=60]{PS01_DP.R}  
+\lstinputlisting[language=R, firstline=54, lastline=54]{PS01_DP.R}  
 \vspace{.5cm}
 \begin{itemize}
 
@@ -128,5 +193,53 @@ Please plot the relationship between \emph{Y} and \emph{X1}? Describe this graph
 \end{itemize}
 \newpage
 	\section*{Solution - Question 2: Political Economy}
+\begin{figure}[h!]\centering
+	\caption{\footnotesize Scatterplot of X1 and Y}
+	\label{fig:plot_1}
+	\includegraphics[width=.95\textwidth]{scatter_x1_y.png}
+\end{figure} 
+\textbf{Interpretation:} \\ There is a moderate positive association between the personal income and the expenditure on housing assistance in a state, both measured in USD per capita. The Pearson correlation coefficient points towards the same conclusion, as its value is above 0, but not close enough to 1 to suggest a strong association between the two variables. 
+\newpage
+\begin{figure}[h!]\centering
+	\caption{\footnotesize Scatterplot of X2 and Y}
+	\label{fig:plot_2}
+	\includegraphics[width=.95\textwidth]{scatter_x2_y.png}
+\end{figure}
+\textbf{Interpretation:} There is a moderate positive association between the personal income and the expenditure on housing assistance in a state, both measured in USD per capita. The Pearson correlation coefficient points towards the same conclusion, as its value is above 0, but not close enough to 1 to suggest a strong association between the two variables. 
+\newpage
+\begin{figure}[h!]\centering
+	\caption{\footnotesize Scatterplot of X3 and Y}
+	\label{fig:plot_3}
+	\includegraphics[width=.95\textwidth]{scatter_x3_y.png}
+\end{figure}
+\textbf{Interpretation:} There is a moderate positive association between the personal income and the expenditure on housing assistance in a state, both measured in USD per capita. The Pearson correlation coefficient points towards the same conclusion, as its value is above 0, but not close enough to 1 to suggest a strong association between the two variables. 
+\newpage
+\begin{figure}[h!]\centering
+	\caption{\footnotesize Scatterplot of X1 and X2}
+	\label{fig:plot_4}
+	\includegraphics[width=.95\textwidth]{scatter_x1_x2.png}
+\end{figure}
+\textbf{Interpretation:} There is a moderate positive association between the personal income and the expenditure on housing assistance in a state, both measured in USD per capita. The Pearson correlation coefficient points towards the same conclusion, as its value is above 0, but not close enough to 1 to suggest a strong association between the two variables. 
+\newpage
+\begin{figure}[h!]\centering
+	\caption{\footnotesize Scatterplot of X2 and X3}
+	\label{fig:plot_5}
+	\includegraphics[width=.95\textwidth]{scatter_x2_x3.png}
+\end{figure}
+\textbf{Interpretation:} There is a moderate positive association between the personal income and the expenditure on housing assistance in a state, both measured in USD per capita. The Pearson correlation coefficient points towards the same conclusion, as its value is above 0, but not close enough to 1 to suggest a strong association between the two variables. 
+\newpage
+\begin{figure}[h!]\centering
+	\caption{\footnotesize Scatterplot of X2 and X3}
+	\label{fig:plot_6}
+	\includegraphics[width=.95\textwidth]{scatter_x2_x3.png}
+\end{figure}
+\textbf{Interpretation:} There is a moderate positive association between the personal income and the expenditure on housing assistance in a state, both measured in USD per capita. The Pearson correlation coefficient points towards the same conclusion, as its value is above 0, but not close enough to 1 to suggest a strong association between the two variables. 
+\newpage
+\begin{figure}[h!]\centering
+	\caption{\footnotesize Scatterplot of X1 and X2}
+	\label{fig:plot_7}
+	\includegraphics[width=.95\textwidth]{boxplot_reg_y.png}
+\end{figure}
+\textbf{Interpretation:} There is a moderate positive association between the personal income and the expenditure on housing assistance in a state, both measured in USD per capita. The Pearson correlation coefficient points towards the same conclusion, as its value is above 0, but not close enough to 1 to suggest a strong association between the two variables. 
 \end{document}
 
