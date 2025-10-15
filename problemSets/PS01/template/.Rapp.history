@@ -1,0 +1,460 @@
+rm(list=ls())#
+# detach all libraries#
+detachAllPackages <- function() {#
+  basic.packages <- c("package:stats", "package:graphics", "package:grDevices", "package:utils", "package:datasets", "package:methods", "package:base")#
+  package.list <- search()[ifelse(unlist(gregexpr("package:", search()))==1, TRUE, FALSE)]#
+  package.list <- setdiff(package.list, basic.packages)#
+  if (length(package.list)>0)  for (package in package.list) detach(package,  character.only=TRUE)#
+}#
+detachAllPackages()
+pkgTest <- function(pkg){#
+  new.pkg <- pkg[!(pkg %in% installed.packages()[,  "Package"])]#
+  if (length(new.pkg)) #
+    install.packages(new.pkg,  dependencies = TRUE)#
+  sapply(pkg,  require,  character.only = TRUE)#
+}
+lapply(c(),  pkgTest, "ggplot2")
+df <- data.frame(#
+  Class = c("Upper class", "Lower class"),#
+  Not_stopped = c(14, 7),#
+  Bribe_requested = c(6, 7),#
+  Stopped_given_warning = c(7, 1)#
+)#
+#
+print(df)
+df <- data.frame(#
+  Class = c("Upper class", "Lower class"),#
+  "Not stopped" = c(14, 7),#
+  "Bribe requested" = c(6, 7),#
+  "Stopped/givennwarning" = c(7, 1)#
+)#
+#
+print(df)
+df <- data.frame(#
+  Class = c("Upper class", "Lower class"),#
+  "Not stopped" = c(14, 7),#
+  "Bribe requested" = c(6, 7),#
+  "Stopped/givennwarning" = c(7, 1)#
+)
+print(df)
+df = data.frame(#
+"Class"= c("Upper Class", "Lower Class"),#
+"Not Stopped"= c(14, 7),#
+"Bribe Requested" = c(6,7),#
+"Stopped/given warning"= c(7,1))
+print(df)
+con_table = table(df)
+con_table
+con_table <- matrix(#
+  c(14, 6, 7,   #
+      7, 7, 1),  #
+  nrow = 2,#
+  byrow = TRUE#
+)
+rownames(con_table) <- c("Upper Class", "Lower Class")#
+colnames(con_table) <- c("Not Stopped", "Bribe Requested", "Stopped/given warning")#
+#
+con_table
+table =table(con_table)#
+table
+addmargins(con_table)
+prop.table(con_table)
+con_table <- matrix(#
+  c(14, 6, 7,   #
+      7, 7, 1),  #
+  nrow = 2,#
+  byrow = TRUE#
+)
+rownames(con_table) <- c("Upper Class", "Lower Class")#
+colnames(con_table) <- c("Not stopped", "Bribe requested", "Stopped/given warning")
+con_table = addmargins(con_table)#
+con_table
+row_totals <- addmargins(mat)[, "Sum"][-3]  #
+row_totals
+row_totals <- addmargins(con_table)[, "Sum"][-3]  #
+row_totals
+row_totals <- addmargins(con_table)  #
+row_totals
+row_totals <- addmargins(con_table)  #
+row_totals
+con_table <- matrix(#
+  c(14, 6, 7,   #
+      7, 7, 1),  #
+  nrow = 2,#
+  byrow = TRUE#
+)
+rownames(con_table) <- c("Upper Class", "Lower Class")#
+colnames(con_table) <- c("Not stopped", "Bribe requested", "Stopped/given warning")
+con_table
+row_totals <- addmargins(con_table)  #
+row_totals
+con_table = addmargins(con_table)#
+con_table
+expected_f1 = con_table[1,4] #
+expected_f1
+grand_total = con_table[4,3]#
+grand_total
+grand_total = con_table[3,4]#
+grand_total
+expected_f1 = con_table[1,4] * con_table[3,1]/ grand_total#
+expected_f1
+expected_f2 = con_table[2,4] * con_table[3,1]/ grand_total
+expected_f2 = con_table[2,4] * con_table[3,1]/ grand_total#
+expected_f2
+grand_total = con_table[3,4]#
+ef1 = con_table[1,4] * con_table[3,1]/ grand_total#
+ef2 = con_table[2,4] * con_table[3,1]/ grand_total#
+ef3 = con_table[1,4] * con_table[3,2]/ grand_total#
+ef4 = con_table[2,4] * con_table[3,2]/ grand_total#
+ef5 = con_table[1,4] * con_table[3,3]/ grand_total#
+ef6 = con_table[2,4] * con_table[3,3]/ grand_total
+expectedfs <- matrix(#
+  c(ef1, ef2, ef3,   #
+      ef4, ef5, ef6),  #
+  nrow = 2,#
+  byrow = TRUE#
+)
+expectedfs
+grand_total = con_table[3,4]#
+ef1 = con_table[1,4] * con_table[3,1]/ grand_total#
+ef2 = con_table[2,4] * con_table[3,1]/ grand_total#
+ef3 = con_table[1,4] * con_table[3,2]/ grand_total#
+ef4 = con_table[2,4] * con_table[3,2]/ grand_total#
+ef5 = con_table[1,4] * con_table[3,3]/ grand_total#
+ef6 = con_table[2,4] * con_table[3,3]/ grand_total#
+#
+expectedfs <- matrix(#
+  c(ef1, ef2, ef3,   #
+      ef4, ef5, ef6),  #
+  nrow = 2,#
+  byrow = TRUE#
+)#
+#
+rownames(expectedfs) <- c("Upper Class", "Lower Class")#
+colnames(expectedfs) <- c("Not stopped", "Bribe requested", "Stopped/given warning")
+expectedfs
+expectedfs <- matrix(#
+  c(ef1, ef2, ef3,   #
+      ef4, ef5, ef6),  #
+  nrow = 2,#
+)
+rownames(expectedfs) <- c("Upper Class", "Lower Class")#
+colnames(expectedfs) <- c("Not stopped", "Bribe requested", "Stopped/given warning")#
+#
+expectedfs
+chi_square <- sum((con_table - expectedfs)^2 / expectedfs)
+con_table <- matrix(#
+  c(14, 6, 7,   #
+      7, 7, 1),  #
+  nrow = 2,#
+  byrow = TRUE#
+)#
+#
+rownames(con_table) <- c("Upper Class", "Lower Class")#
+colnames(con_table) <- c("Not stopped", "Bribe requested", "Stopped/given warning")#
+#
+con_table
+observedfs <- matrix(#
+  c(14, 6, 7,   #
+      7, 7, 1),  #
+  nrow = 2,#
+  byrow = TRUE#
+)#
+#
+rownames(observedfs) <- c("Upper Class", "Lower Class")#
+colnames(observedfs) <- c("Not stopped", "Bribe requested", "Stopped/given warning")#
+#
+con_table = addmargins(observedfs)
+grand_total = con_table[3,4]#
+ef1 = con_table[1,4] * con_table[3,1]/ grand_total#
+ef2 = con_table[2,4] * con_table[3,1]/ grand_total#
+ef3 = con_table[1,4] * con_table[3,2]/ grand_total#
+ef4 = con_table[2,4] * con_table[3,2]/ grand_total#
+ef5 = con_table[1,4] * con_table[3,3]/ grand_total#
+ef6 = con_table[2,4] * con_table[3,3]/ grand_total#
+#
+expectedfs <- matrix(#
+  c(ef1, ef2, ef3,   #
+      ef4, ef5, ef6),  #
+  nrow = 2,#
+)
+rownames(expectedfs) <- c("Upper Class", "Lower Class")#
+colnames(expectedfs) <- c("Not stopped", "Bribe requested", "Stopped/given warning")#
+#
+expectedfs
+chi_square <- sum((observedfs - expectedfs)^2 / expectedfs)#
+chi_square
+result <- chisq.test(observedfs)
+observedfs <- matrix(#
+  c(14, 6, 7,   #
+      7, 7, 1),  #
+  nrow = 2,#
+  byrow = TRUE#
+)#
+#
+rownames(observedfs) <- c("Upper Class", "Lower Class")#
+colnames(observedfs) <- c("Not stopped", "Bribe requested", "Stopped/given warning")#
+#
+con_table = addmargins(observedfs)
+grand_total = con_table[3,4]#
+ef1 = con_table[1,4] * con_table[3,1]/ grand_total#
+ef2 = con_table[2,4] * con_table[3,1]/ grand_total#
+ef3 = con_table[1,4] * con_table[3,2]/ grand_total#
+ef4 = con_table[2,4] * con_table[3,2]/ grand_total#
+ef5 = con_table[1,4] * con_table[3,3]/ grand_total#
+ef6 = con_table[2,4] * con_table[3,3]/ grand_total#
+#
+expectedfs <- matrix(#
+  c(ef1, ef2, ef3,   #
+      ef4, ef5, ef6),  #
+  nrow = 2,#
+)
+rownames(expectedfs) <- c("Upper Class", "Lower Class")#
+colnames(expectedfs) <- c("Not stopped", "Bribe requested", "Stopped/given warning")#
+#
+expectedfs
+result <- chisq.test(observedfs)
+result <- chisq.test(con_table)#
+result
+chi_square <- sum((observedfs - expectedfs)^2 / expectedfs)#
+chi_square
+result <- chisq.test(observedfs)#
+result
+result <- chisq.test(observedfs)#
+result
+p = pchisq(chi_square, df = 2, lower.tail = FALSE)#
+p
+result$residuals
+row1_p = con_table[1,4]/grand_total#
+row1_p
+row2_p = con_table[2,4]/grand_total#
+row2_p
+row1_p = con_table[1,4]/grand_total#
+row2_p = con_table[2,4]/grand_total#
+col1_p = con_table[3,1]/grand_total#
+col2_p = con_table[3,2]/grand_total#
+col3_p = con_table[3,3]/grand_total
+z11 = (observedfs[1,1] - ef1)/(sqrt(ef1 * (1-row1_p)* (1-col1_p)))#
+z11
+z11 = (observedfs[1,1] - ef1)/(sqrt(ef1))#
+z11
+row1_p = con_table[1,4]/grand_total#
+row2_p = con_table[2,4]/grand_total#
+col1_p = con_table[3,1]/grand_total#
+col2_p = con_table[3,2]/grand_total#
+col3_p = con_table[3,3]/grand_total#
+#
+z11 = (observedfs[1,1] - ef1)/(sqrt(ef1))#
+z12 = (observedfs[1,2] - ef2)/(sqrt(ef2))#
+z13 = (observedfs[1,3] - ef3)/(sqrt(ef3))#
+z21 = (observedfs[2,1] - ef4)/(sqrt(ef4))#
+z22 = (observedfs[2,2] - ef5)/(sqrt(ef5))#
+z23 = (observedfs[2,3] - ef6)/(sqrt(ef6))
+st_res <- matrix(#
+  c(z11, z12, z13,   #
+      z21, z22, z33),  #
+  nrow = 2,#
+)
+st_res <- matrix(#
+  c(z11, z12, z13,   #
+      z21, z22, z23),  #
+  nrow = 2,#
+)
+st_res <- matrix(#
+  c(z11, z12, z13,   #
+      z21, z22, z23),  #
+  nrow = 2)
+rownames(st_res) <- c("Upper Class", "Lower Class")#
+colnames(st_res) <- c("Not stopped", "Bribe requested", "Stopped/given warning")
+st_res
+z11 = (observedfs[1,1] - ef1)/(sqrt(ef1))#
+z12 = (observedfs[1,2] - ef2)/(sqrt(ef2))#
+z13 = (observedfs[1,3] - ef3)/(sqrt(ef3))#
+z21 = (observedfs[2,1] - ef4)/(sqrt(ef4))#
+z22 = (observedfs[2,2] - ef5)/(sqrt(ef5))#
+z23 = (observedfs[2,3] - ef6)/(sqrt(ef6))
+st_res <- matrix(#
+  c(z11, z12, z13,   #
+      z21, z22, z23),  #
+  nrow = 2)#
+#
+rownames(st_res) <- c("Upper Class", "Lower Class")#
+colnames(st_res) <- c("Not stopped", "Bribe requested", "Stopped/given warning")#
+#
+st_res
+observedfs <- matrix(#
+  c(14, 6, 7,   #
+      7, 7, 1),  #
+  nrow = 2,#
+  byrow = TRUE#
+)#
+#
+rownames(observedfs) <- c("Upper Class", "Lower Class")#
+colnames(observedfs) <- c("Not stopped", "Bribe requested", "Stopped/given warning")
+con_table = addmargins(observedfs)
+grand_total = con_table[3,4]#
+ef1 = con_table[1,4] * con_table[3,1]/ grand_total#
+ef2 = con_table[2,4] * con_table[3,1]/ grand_total#
+ef3 = con_table[1,4] * con_table[3,2]/ grand_total#
+ef4 = con_table[2,4] * con_table[3,2]/ grand_total#
+ef5 = con_table[1,4] * con_table[3,3]/ grand_total#
+ef6 = con_table[2,4] * con_table[3,3]/ grand_total#
+#
+expectedfs <- matrix(#
+  c(ef1, ef2, ef3,   #
+      ef4, ef5, ef6),  #
+  nrow = 2,#
+)
+rownames(expectedfs) <- c("Upper Class", "Lower Class")#
+colnames(expectedfs) <- c("Not stopped", "Bribe requested", "Stopped/given warning")
+expectedfs
+chi_square <- sum((observedfs - expectedfs)^2 / expectedfs)#
+chi_square#
+#
+result <- chisq.test(observedfs)
+result$expected
+con_table = addmargins(observedfs)
+con_table = addmargins(observedfs)#
+con_table
+observedfs[1,2]
+observedfs[2,1]
+observedfs <- matrix(#
+  c(14, 7, 6,   #
+      7, 7, 1),  #
+  nrow = 2)
+rownames(observedfs) <- c("Upper Class", "Lower Class")#
+colnames(observedfs) <- c("Not stopped", "Bribe requested", "Stopped/given warning")#
+#
+con_table = addmargins(observedfs)#
+con_table
+grand_total = con_table[3,4]#
+ef1 = con_table[1,4] * con_table[3,1]/ grand_total#
+ef2 = con_table[2,4] * con_table[3,1]/ grand_total#
+ef3 = con_table[1,4] * con_table[3,2]/ grand_total#
+ef4 = con_table[2,4] * con_table[3,2]/ grand_total#
+ef5 = con_table[1,4] * con_table[3,3]/ grand_total#
+ef6 = con_table[2,4] * con_table[3,3]/ grand_total#
+#
+expectedfs <- matrix(#
+  c(ef1, ef2, ef3,   #
+      ef4, ef5, ef6),  #
+  nrow = 2)
+rownames(expectedfs) <- c("Upper Class", "Lower Class")#
+colnames(expectedfs) <- c("Not stopped", "Bribe requested", "Stopped/given warning")#
+#
+expectedfs
+chi_square <- sum((observedfs - expectedfs)^2 / expectedfs)#
+chi_square#
+#
+result <- chisq.test(observedfs)#
+result#
+result$residuals#
+result$expected#
+#
+# p value #
+p = pchisq(chi_square, df = 2, lower.tail = FALSE)#
+p
+z12 = (observedfs[1,2] - ef2)/(sqrt(ef2))#
+observedfs[1,2]
+z12 = (observedfs[2,1] - ef2)/(sqrt(ef2))#
+observedfs[2,1]
+z11 = (observedfs[1,1] - ef1)/(sqrt(ef1))#
+z12 = (observedfs[2,1] - ef2)/(sqrt(ef2))#
+z13 = (observedfs[3,1] - ef3)/(sqrt(ef3))#
+z21 = (observedfs[2,1] - ef4)/(sqrt(ef4))#
+z22 = (observedfs[2,2] - ef5)/(sqrt(ef5))#
+z23 = (observedfs[2,3] - ef6)/(sqrt(ef6))
+z11 = (observedfs[1,1] - ef1)/(sqrt(ef1))#
+z12 = (observedfs[2,1] - ef2)/(sqrt(ef2))#
+z13 = (observedfs[1,3] - ef3)/(sqrt(ef3))#
+z21 = (observedfs[2,1] - ef4)/(sqrt(ef4))#
+z22 = (observedfs[2,2] - ef5)/(sqrt(ef5))#
+z23 = (observedfs[2,3] - ef6)/(sqrt(ef6))
+st_res <- matrix(#
+  c(z11, z12, z13,   #
+      z21, z22, z23),  #
+  nrow = 2)#
+#
+rownames(st_res) <- c("Upper Class", "Lower Class")#
+colnames(st_res) <- c("Not stopped", "Bribe requested", "Stopped/given warning")
+st_res
+z11 = (observedfs[1,1] - ef1)/(sqrt(ef1))#
+z21 = (observedfs[2,1] - ef2)/(sqrt(ef2))#
+z12 = (observedfs[1,2] - ef3)/(sqrt(ef3))#
+z22 = (observedfs[2,2] - ef4)/(sqrt(ef4))#
+z13 = (observedfs[1,3] - ef5)/(sqrt(ef5))#
+z23 = (observedfs[2,3] - ef6)/(sqrt(ef6))
+st_res <- matrix(#
+  c(z11, z12, z13,   #
+      z21, z22, z23),  #
+  nrow = 2)
+rownames(st_res) <- c("Upper Class", "Lower Class")#
+colnames(st_res) <- c("Not stopped", "Bribe requested", "Stopped/given warning")#
+#
+st_res
+result$residuals
+st_res <- matrix(#
+  c(z11, z21, z12,   #
+      z22, z13, z23),  #
+  nrow = 2)#
+#
+rownames(st_res) <- c("Upper Class", "Lower Class")#
+colnames(st_res) <- c("Not stopped", "Bribe requested", "Stopped/given warning")#
+#
+st_res
+result$residuals
+expenditure <- read.table("https://raw.githubusercontent.com/kosukeimai/qss/master/PREDICTION/women.csv", header=T)
+xpenditure <- read.csv("https://raw.githubusercontent.com/kosukeimai/qss/master/PREDICTION/women.csv", header=T)
+expenditure <- read.csv("https://raw.githubusercontent.com/kosukeimai/qss/master/PREDICTION/women.csv", header=T)
+head(expenditure)
+ggplot(expenditure, aes(x = reserved, y = irrigation)) +#
+  geom_point() +#
+  labs(title = "Relationship between personal income #
+  				and housing assistance expenditure",#
+       x = "personal income (USD per capita)",#
+       y = "expenditure on housing assistance (USD per capita)") +#
+  stat_cor(aes(label = ..r.label..)) +#
+  theme_minimal()
+lapply(c("ggplot2"), pkgTest)
+ggplot(expenditure, aes(x = reserved, y = irrigation)) +#
+  geom_point() +#
+  labs(title = "Relationship between personal income #
+  				and housing assistance expenditure",#
+       x = "personal income (USD per capita)",#
+       y = "expenditure on housing assistance (USD per capita)") +#
+  stat_cor(aes(label = ..r.label..)) +#
+  theme_minimal()
+ggplot(expenditure, aes(x = reserved, y = irrigation)) +#
+  geom_point() +#
+  labs(title = "Relationship between personal income #
+  				and housing assistance expenditure",#
+       x = "personal income (USD per capita)",#
+       y = "expenditure on housing assistance (USD per capita)") +#
+  theme_minimal()
+ggplot(expenditure, aes(x=reserved, y=Y, irrigation)) +#
+   geom_boxplot() +#
+   theme(#
+      legend.position="none",#
+      plot.title = element_text(size=11)) +#
+      labs(title = "Boxplot for housing assistance expenditure for each region",#
+           x = "Region",#
+           y = "expenditure on housing assistance (USD per capita)") + #
+	theme_minimal()
+ggplot(expenditure, aes(x=reserved, y= irrigation)) +#
+   geom_boxplot() +#
+   theme(#
+      legend.position="none",#
+      plot.title = element_text(size=11)) +#
+      labs(title = "Boxplot for housing assistance expenditure for each region",#
+           x = "Region",#
+           y = "expenditure on housing assistance (USD per capita)") + #
+	theme_minimal()
+ggplot(expenditure, aes(x=reserved, y= irrigation, group = reserved)) +#
+   geom_boxplot() +#
+   theme(#
+      legend.position="none",#
+      plot.title = element_text(size=11)) +#
+      labs(title = "Boxplot for housing assistance expenditure for each region",#
+           x = "Region",#
+           y = "expenditure on housing assistance (USD per capita)") + #
+	theme_minimal()
