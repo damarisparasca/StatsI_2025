@@ -2,8 +2,8 @@
 \usepackage{graphicx,textcomp}
 \usepackage{natbib}
 \usepackage{setspace}
+\usepackage[margin=1in]{geometry}
 \usepackage{color}
-\usepackage{fullpage}
 \usepackage[reqno]{amsmath}
 \usepackage{amsthm}
 \usepackage{fancyvrb}
@@ -97,12 +97,54 @@
 	
 	\item [(a)]
 	Calculate the $\chi^2$ test statistic by hand/manually (even better if you can do "by hand" in \texttt{R}).\\
-	\vspace{7cm}
+\underline{\textbf{Step 1:} assumptions} 
+\begin{itemize}
+	\item categorical variables: class and police behaviour (whether they stopped the drivers and requested a bribe from them)
+	\item the observations are independent 
+	\item the frequency in (most) cells is over 5 
+\end{itemize}
+\underline{\textbf{Step 2:} hypotheses} 
+\begin{itemize}
+	\item null hypothesis: the variables (class and police behaviour) are statistically independent. 
+	\item alternative hypothesis: the variables (class and police behaviour) are statistically dependent. 
+\end{itemize}
+\underline{\textbf{Step 3:} calculate the test statistic} 
+\begin{itemize}
+	\item set up the data and create a contingency table 
+\lstinputlisting[language=R, firstline=22, lastline=31]{PS02_DP.R}
+\begin{verbatim}
+            Not stopped Bribe requested Stopped/given warning Sum
+Upper Class          14               6                     7  27
+Lower Class           7               7                     1  15
+Sum                  21              13                     8  42
+\end{verbatim}
+	\item extract the grand total from the contingency table
+	\item calculate the expected frequencies using the formula : \\ expected frequency = row total * column total / grand total 
+\lstinputlisting[language=R, firstline=34, lastline= 44]{PS02_DP.R}
+	\item create a matrix containing the expected frequencies 
+\lstinputlisting[language=R, firstline=47, lastline= 53]{PS02_DP.R}
+\begin{verbatim}
+            Not stopped Bribe requested Stopped/given warning
+Upper Class        13.5        8.357143              5.142857
+Lower Class         7.5        4.642857              2.857143
+\end{verbatim}
+	\item having both the observed and the expected frequencies, we can calculate the chi-square test statistic : 
+\lstinputlisting[language=R, firstline=56, lastline= 57]{PS02_DP.R}
+\begin{verbatim}
+	[1] 3.791168
+\end{verbatim}
+\end{itemize}
+	\vspace{1cm}
 	
 	\item [(b)]
 	Now calculate the p-value from the test statistic you just created (in \texttt{R}).\footnote{Remember frequency should be $>$ 5 for all cells, but let's calculate the p-value here anyway.}  What do you conclude if $\alpha = 0.1$?\\
-	
-	\newpage
+\underline{\textbf{Step 4:} calculate the p-value} 
+\lstinputlisting[language=R, firstline=59, lastline= 65]{PS02_DP.R}
+\begin{verbatim}
+	[1] 0.1502306
+\end{verbatim}
+\underline{\textbf{Step 5:} conclusion} \\ [0.5cm]
+The p-value is higher than the alpha value (0.1). Thus, we cannot reject the null hypothesis that the variables class and police behaviour are statistically independent. The test result is not statistically significant. 
 	\item [(c)] Calculate the standardized residuals for each cell and put them in the table below.
 	\vspace{1cm}
 	
@@ -112,17 +154,13 @@
 			& Not Stopped & Bribe requested & Stopped/given warning \\
 			\\[-1.8ex] 
 			\hline \\[-1.8ex]
-			Upper class  &  &  &  \\
-			\\
-			Lower class &  &   &   \\
-			
+			Upper class  &0.3220306  &-1.641957  &1.523026 \\
+			Lower class  &-0.3220306  &1.641957   &-1.523026  \\
 		\end{tabular}
 	\end{table}
-	
-	
-	\vspace{7cm}
-	\item [(d)] How might the standardized residuals help you interpret the results?  
-	
+	\lstinputlisting[language=R, firstline=70, lastline= 71]{PS02_DP.R}
+	\item [(d)] How might the standardized residuals help you interpret the results?  \\ [0.5cm]
+	Since none of the standardized residuals have an absolute value higher than 2, we can conclude that there are no substantial differences from what we would expect. In this case, the values of the standardised residuals suggest that police officers' bevahiour did not vary significantly based on the class of the drivers they interacted with. The values of the standardised residuals also indicate that we are less likely to be able to reject the null hypothesis, which aligns with the conclusion of the hypothesis test conducted previously. 
 \end{enumerate}
 \newpage
 
@@ -141,15 +179,44 @@ Chattopadhyay and Duflo were interested in whether women promote different polic
 
 \newpage
 \begin{enumerate}
-	\item [(a)] State a null and alternative (two-tailed) hypothesis. 
-	\vspace{6cm}
-	Null hypothesis: the reservation policy is not associated with the number of new/repaired drinking water facilities in the villages. 
-	\item [(b)] Run a bivariate regression to test this hypothesis in \texttt{R} (include your code!).
+	\item [(a)] State a null and alternative (two-tailed) hypothesis. \\ [0.5 cm]
+	\textbf{Null hypothesis:} $\beta = 0$ \\
+	The reservation policy is not associated with the number of new/repaired drinking water facilities in the villages. \\ [0.3cm]
+	\textbf{Alternative hypothesis:} $\beta \neq 0$ \\
+	The reservation policy is associated with the number of new/repaired drinking water facilities in the villages. \\ [0.3cm]
+	With $\beta$ being the slope - the coefficient estimate for the reservation policy. 
 	
+	\vspace{1cm}
+	\item [(b)] Run a bivariate regression to test this hypothesis in \texttt{R} (include your code!).
+\lstinputlisting[language=R, firstline=76, lastline= 82]{PS02_DP.R}
+\begin{verbatim}
+	Call:
+	lm(formula = df$water ~ df$reserved)
+	
+	Residuals:
+	Min      1Q  Median      3Q     Max 
+	-23.991 -14.738  -7.865   2.262 316.009 
+	
+	Coefficients:
+	Estimate Std. Error t value Pr(>|t|)    
+	(Intercept)   14.738      2.286   6.446 4.22e-10 ***
+	df$reserved    9.252      3.948   2.344   0.0197 *  
+	---
+	Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+	
+	Residual standard error: 33.45 on 320 degrees of freedom
+	Multiple R-squared:  0.01688,	Adjusted R-squared:  0.0138 
+	F-statistic: 5.493 on 1 and 320 DF,  p-value: 0.0197
+\end{verbatim}
 	\vspace{6cm}
 	\item [(c)] Interpret the coefficient estimate for reservation policy. 
+\begin{verbatim}
+	Coefficients:
+	Estimate Std. Error t value Pr(>|t|)    
+	(Intercept)   14.738      2.286   6.446 4.22e-10 ***
+	df$reserved    9.252      3.948   2.344   0.0197 *  
+\end{verbatim}
+	Since the reserved variable is a binary one, the value of the intercept (14.738) shows the average number of new/repaired drinking-water facilities in the villages without the reservation policy. The slope or the coefficient estimate for the reservation policy indicates that, on average, villages where the policy was implemented have 9.252 more new/repaired drinking-water facilities. The p-value (0.0197) is smaller than the signficance level $\alpha=0.05$, so we can reject the null hypothesis that the reservation policy is not associated with the number of new/repaired drinking-water facilities. 
 \end{enumerate}
-
-
 %\end{enumerate}
 \end{document}
