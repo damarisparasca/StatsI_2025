@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.7)  23 OCT 2025 00:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.7)  23 OCT 2025 21:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -720,21 +720,26 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 ) (./PS02_DP.R
 
 [2]) (./PS02_DP.R) (./PS02_DP.R) (./PS02_DP.R)
+Underfull \hbox (badness 10000) in paragraph at lines 146--148
+
+ []
+
+
 
 [3] (./PS02_DP.R)
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
 
-<women_desc.png, id=89, 750.805pt x 300.12125pt>
+<women_desc.png, id=90, 750.805pt x 300.12125pt>
 File: women_desc.png Graphic file (type png)
 <use women_desc.png>
-Package pdftex.def Info: women_desc.png  used on input line 177.
+Package pdftex.def Info: women_desc.png  used on input line 182.
 (pdftex.def)             Requested size: 516.73338pt x 206.5664pt.
 
-Overfull \hbox (46.97836pt too wide) in paragraph at lines 177--178
+Overfull \hbox (46.97836pt too wide) in paragraph at lines 182--183
  [][] 
  []
 
@@ -753,18 +758,18 @@ Package rerunfilecheck Info: File `PS02_DP.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27499 strings out of 469781
- 480721 string characters out of 5481231
- 1261253 words of memory out of 5000000
+ 27500 strings out of 469781
+ 480735 string characters out of 5481231
+ 1260339 words of memory out of 5000000
  55336 multiletter control sequences out of 15000+600000
  638562 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,8n,91p,3239b,2276s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/damirish/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </Users/damirish/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></Users/damirish/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PS02_DP.pdf (7 pages, 183501 bytes).
+Output written on PS02_DP.pdf (7 pages, 183679 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
- 152 compressed objects within 2 object streams
- 65 named destinations out of 1000 (max. 500000)
+ 194 PDF objects out of 1000 (max. 8388607)
+ 153 compressed objects within 2 object streams
+ 66 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

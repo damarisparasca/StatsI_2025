@@ -69,7 +69,7 @@ p
 
 # get the standardised residuals
 result <- chisq.test(observedfs)
-result$residuals
+result$stdres
 
 # Problem 2 
 # read dataset and show the first few rows

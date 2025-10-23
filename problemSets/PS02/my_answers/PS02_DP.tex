@@ -96,12 +96,12 @@
 \begin{enumerate}
 	
 	\item [(a)]
-	Calculate the $\chi^2$ test statistic by hand/manually (even better if you can do "by hand" in \texttt{R}).\\
+	Calculate the $\chi^2$ test statistic by hand/manually (even better if you can do "by hand" in \texttt{R}).\\ [0.3cm]
 \underline{\textbf{Step 1:} assumptions} 
 \begin{itemize}
 	\item categorical variables: class and police behaviour (whether they stopped the drivers and requested a bribe from them)
 	\item the observations are independent 
-	\item the frequency in (most) cells is over 5 
+	\item the frequency in all cells is above 5 - does not fully apply in this case, but we will proceed anyway (as mentioned in the second footnote)
 \end{itemize}
 \underline{\textbf{Step 2:} hypotheses} 
 \begin{itemize}
@@ -134,17 +134,17 @@ Lower Class         7.5        4.642857              2.857143
 	[1] 3.791168
 \end{verbatim}
 \end{itemize}
-	\vspace{1cm}
+	\vspace{0.5cm}
 	
 	\item [(b)]
-	Now calculate the p-value from the test statistic you just created (in \texttt{R}).\footnote{Remember frequency should be $>$ 5 for all cells, but let's calculate the p-value here anyway.}  What do you conclude if $\alpha = 0.1$?\\
+	Now calculate the p-value from the test statistic you just created (in \texttt{R}).\footnote{Remember frequency should be $>$ 5 for all cells, but let's calculate the p-value here anyway.}  What do you conclude if $\alpha = 0.1$?\\ [0.3cm]
 \underline{\textbf{Step 4:} calculate the p-value} 
 \lstinputlisting[language=R, firstline=59, lastline= 65]{PS02_DP.R}
 \begin{verbatim}
 	[1] 0.1502306
 \end{verbatim}
 \underline{\textbf{Step 5:} conclusion} \\ [0.5cm]
-The p-value is higher than the alpha value (0.1). Thus, we cannot reject the null hypothesis that the variables class and police behaviour are statistically independent. The test result is not statistically significant. 
+The p-value is higher than the alpha value (0.1). Thus, we cannot reject the null hypothesis that the variables (class and police behaviour) are statistically independent. \\ [0.3cm]
 	\item [(c)] Calculate the standardized residuals for each cell and put them in the table below.
 	\vspace{1cm}
 	
@@ -154,13 +154,18 @@ The p-value is higher than the alpha value (0.1). Thus, we cannot reject the nul
 			& Not Stopped & Bribe requested & Stopped/given warning \\
 			\\[-1.8ex] 
 			\hline \\[-1.8ex]
-			Upper class  &0.3220306  &-1.641957  &1.523026 \\
+			Upper class  &0.3220306   &-1.641957  &1.523026 \\
 			Lower class  &-0.3220306  &1.641957   &-1.523026  \\
 		\end{tabular}
 	\end{table}
-	\lstinputlisting[language=R, firstline=70, lastline= 71]{PS02_DP.R}
+	\lstinputlisting[language=R, firstline=70, lastline= 72]{PS02_DP.R}
+	\begin{verbatim}
+	            Not stopped Bribe requested Stopped/given warning
+	Upper Class   0.3220306       -1.641957              1.523026
+	Lower Class  -0.3220306        1.641957             -1.523026
+	\end{verbatim}
 	\item [(d)] How might the standardized residuals help you interpret the results?  \\ [0.5cm]
-	Since none of the standardized residuals have an absolute value higher than 2, we can conclude that there are no substantial differences from what we would expect. In this case, the values of the standardised residuals suggest that police officers' bevahiour did not vary significantly based on the class of the drivers they interacted with. The values of the standardised residuals also indicate that we are less likely to be able to reject the null hypothesis, which aligns with the conclusion of the hypothesis test conducted previously. 
+	Since none of the standardised residuals’ absolute values are greater than 2, we can infer that the observed frequencies don’t deviate substantially from the expected ones. Additionally, these values of the standardised residuals suggest that we are not likely to reject the null hypothesis that the variables are statistically independent. This also aligns with the result of the chi-square test conducted above. 
 \end{enumerate}
 \newpage
 
@@ -181,12 +186,12 @@ Chattopadhyay and Duflo were interested in whether women promote different polic
 \begin{enumerate}
 	\item [(a)] State a null and alternative (two-tailed) hypothesis. \\ [0.5 cm]
 	\textbf{Null hypothesis:} $\beta = 0$ \\
-	The reservation policy is not associated with the number of new/repaired drinking water facilities in the villages. \\ [0.3cm]
+	The reservation policy is not (linearly) associated with the number of new/repaired drinking water facilities in the villages. \\ [0.3cm]
 	\textbf{Alternative hypothesis:} $\beta \neq 0$ \\
-	The reservation policy is associated with the number of new/repaired drinking water facilities in the villages. \\ [0.3cm]
+	The reservation policy is (linearly) associated with the number of new/repaired drinking water facilities in the villages. \\ [0.3cm]
 	With $\beta$ being the slope - the coefficient estimate for the reservation policy. 
 	
-	\vspace{1cm}
+	\vspace{0.5cm}
 	\item [(b)] Run a bivariate regression to test this hypothesis in \texttt{R} (include your code!).
 \lstinputlisting[language=R, firstline=76, lastline= 82]{PS02_DP.R}
 \begin{verbatim}
