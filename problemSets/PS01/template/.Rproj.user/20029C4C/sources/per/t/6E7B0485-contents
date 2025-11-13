@@ -1,0 +1,149 @@
+#####################
+# load libraries
+# set wd
+# clear global .envir
+#####################
+
+# remove objects
+rm(list=ls())
+# detach all libraries
+detachAllPackages <- function() {
+  basic.packages <- c("package:stats", "package:graphics", "package:grDevices", "package:utils", "package:datasets", "package:methods", "package:base")
+  package.list <- search()[ifelse(unlist(gregexpr("package:", search()))==1, TRUE, FALSE)]
+  package.list <- setdiff(package.list, basic.packages)
+  if (length(package.list)>0)  for (package in package.list) detach(package,  character.only=TRUE)
+}
+detachAllPackages()
+
+# load libraries
+pkgTest <- function(pkg){
+  new.pkg <- pkg[!(pkg %in% installed.packages()[,  "Package"])]
+  if (length(new.pkg)) 
+    install.packages(new.pkg,  dependencies = TRUE)
+  sapply(pkg,  require,  character.only = TRUE)
+}
+
+# here is where you load any necessary packages
+# ex: stringr
+# lapply(c("stringr"),  pkgTest)
+
+lapply(c(),  pkgTest, "ggplot2")
+
+#####################
+# Problem 1
+#####################
+
+y <- c(105, 69, 86, 100, 82, 111, 104, 110, 87, 108, 87, 90, 94, 113, 112, 98, 80, 97, 95, 111, 114, 89, 95, 126, 98)
+
+sum(y)
+mean = sum(y)/length(y)
+mean
+
+# confidence interval
+demeanedSum <- y - mean
+sum(demeanedSum)
+squaredError <- demeanedSum ^ 2 
+sum(squaredError)
+variance <- sum(squaredError)/(length(y)-1)
+variance
+stdev = sqrt(variance)
+stdev
+sterror = stdev/sqrt(length(y))
+sterror
+t = qt(p = 0.1/2, df = 24, lower.tail = F)
+t 
+lowerlimit = mean - t * sterror
+upperlimit = mean + t * sterror
+lowerlimit
+upperlimit
+
+# hypothesis testing 
+# assumptions
+# null hypothesis mean is lower or equal to 100 
+ts = (mean - 100)/sterror
+ts 
+p = pt(abs(ts), df = 24, lower.tail = FALSE)
+p
+# cant reject the null hypothesis 
+
+
+#####################
+# Problem 2
+#####################
+lapply(c("ggplot2"), pkgTest)
+
+expenditure <- read.table("https://raw.githubusercontent.com/ASDS-TCD/StatsI_2025/main/datasets/expenditure.txt", header=T)
+head(expenditure)
+
+ggplot(expenditure, aes(x = X1, y = Y)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Relationship between X1 and Y",
+                 x = "X1 variable",
+                 y = "Y variable") +
+                theme_minimal()
+
+ggplot(expenditure, aes(x = X2, y = Y)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Relationship between X2 and Y",
+       x = "X2 variable",
+       y = "Y variable") +
+  theme_minimal()
+
+ggplot(expenditure, aes(x = X3, y = Y)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Relationship between X3 and Y",
+       x = "X3 variable",
+       y = "Y variable") +
+  theme_minimal()
+
+ggplot(expenditure, aes(x = X1, y = X2)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Relationship between X1 and X2",
+       x = "X1 variable",
+       y = "X2 variable") +
+  theme_minimal()
+
+ggplot(expenditure, aes(x = X1, y = X3)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Relationship between X1 and X3",
+       x = "X1 variable",
+       y = "X3 variable") +
+  theme_minimal()
+
+ggplot(expenditure, aes(x = X2, y = X3)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Relationship between X2 and X3",
+       x = "X2 variable",
+       y = "X3 variable") +
+  theme_minimal()
+
+ggplot(expenditure, aes(x=Region, y=Y, group=Region)) +
+   geom_boxplot() +
+    theme(
+        legend.position="none",
+        plot.title = element_text(size=11)) +
+        labs(title = "Boxplot for Y for each region",
+                 x = "Region",
+                 y = "Y") + 
+        theme_minimal()
+
+ggplot(expenditure, aes(x = X1, y = Y, shape = factor(Region), color = factor(Region))) +
+  geom_point(size = 3) +
+  scale_color_manual(values = c("black", "red", "green", "purple"), labels = c("region 1", "region 2", "region 3", "region 4")) +
+  scale_shape_manual(values = c(21, 17, 18, 19), labels = c("region 1", "region 2", "region 3", "region 4")) +
+  labs(title = "Relationship between Y and X1",
+       x = "X1",
+       y = "Y",
+       shape = "Region", 
+       color = "Region") +
+  theme_minimal()
+
+
+
+
